@@ -4,7 +4,14 @@
 }
 
 body{
-  background-color: darkgray;
+  background-color: whitesmoke;
+}
+
+@media print{
+  input,
+  button{
+    display: none !important;
+  }
 }
 
 .frmContent{
@@ -29,12 +36,14 @@ button{
   cursor: pointer;
 }
 
-table,td,th{
-  border: 1px solid black;
-}
+
 
 td,th{
   padding: 0 1em;
   
+}
+
+.cabecalho{
+  background-color: cornflowerblue ;
 }
 

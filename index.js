@@ -17,6 +17,7 @@ function carregarDoLocalStorage() {
 // Chame a função de carregar ao carregar a página
 carregarDoLocalStorage();
 
+//funcao pra adicionar uma nova pessoa
 function exibir() {
   const inNome = document.getElementById('nome').value;
   const inFuncao = document.getElementById('funcao').value;
@@ -35,6 +36,7 @@ function exibir() {
   limparCampos(); //chamada pra limpar as inputs
 }
 
+//funcao para exibir pessoas
 function exibirPessoas() {
   const tabela = document.getElementById('listaPessoas');
 
@@ -42,9 +44,9 @@ function exibirPessoas() {
   tabela.innerHTML = '';
 
   // Percorra a array de pessoas e adicione cada pessoa como uma nova linha na tabela
-  pessoas.forEach((pessoa) => {
+  pessoas.forEach((pessoa, index) => {
     const linha = tabela.insertRow();
-    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td>`;
+    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td><td><button onclick="editar(${index})">Editar</button></td>`;
   });
 }
 
@@ -58,5 +60,23 @@ function limparCampos() {
   inFuncao.value = '';
   inIdade.value = '';
   inEmpresa.value = '';
+}
+
+// função pra editar os dados de uma pessoa
+function editar(index) {
+  const pessoa = pessoas[index];
+  const novoNome = prompt("Novo nome:", pessoa.nome);
+  const novaFuncao = prompt("Nova função:", pessoa.funcao);
+  const novaIdade = prompt("Nova idade:", pessoa.idade);
+  const novaEmpresa = prompt("Nova empresa:", pessoa.empresa);
+
+  // Atualiza os dados da pessoa
+  pessoa.nome = novoNome || pessoa.nome;
+  pessoa.funcao = novaFuncao || pessoa.funcao;
+  pessoa.idade = parseInt(novaIdade) || pessoa.idade;
+  pessoa.empresa = novaEmpresa || pessoa.empresa;
+
+  exibirPessoas(); // Para exibir as pessoas atualizadas na tabela
+  salvarNoLocalStorage(); // Para salvar as pessoas atualizadas no localStorage
 }
 

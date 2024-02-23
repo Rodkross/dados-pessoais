@@ -1,0 +1,40 @@
+:root{
+  font-family: "Ubuntu", sans-serif;
+
+}
+
+body{
+  background-color: darkgray;
+}
+
+.frmContent{
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+
+}
+
+input{
+  width: 15em;
+  cursor: pointer;
+}
+
+input::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+button{
+  cursor: pointer;
+}
+
+table,td,th{
+  border: 1px solid black;
+}
+
+td,th{
+  padding: 0 1em;
+  
+}
+

@@ -24,6 +24,12 @@ function exibir() {
   const inIdade = document.getElementById('idade').value;
   const inEmpresa = document.getElementById('empresa').value;
 
+  // Verifica se algum campo está vazio
+  if (inNome === '' || inFuncao === '' || inIdade === '' || inEmpresa === '') {
+    alert('Por favor, preencha todos os campos.');
+    return; // Impede a execução do código abaixo caso algum campo esteja vazio
+  }
+
   pessoas.push({
     nome: inNome,
     funcao: inFuncao,

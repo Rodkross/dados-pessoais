@@ -46,7 +46,7 @@ function exibirPessoas() {
   // Percorra a array de pessoas e adicione cada pessoa como uma nova linha na tabela
   pessoas.forEach((pessoa, index) => {
     const linha = tabela.insertRow();
-    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td><td><button class="btn-editar" onclick="editar(${index})">+</button></td><td><button class="btn-remover" onclick="remover(${index})">-</button></td>`;
+    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td><td><button class="btn-editar" onclick="editar(${index})">Editar</button><button class="btn-remover" onclick="remover(${index})">Excluir</button>`;
 
     //um ternario para colocar classe em cada linha de nome par ou impar
     linha.className = index % 2 === 0 ? 'linha-par' : 'linha-impar';

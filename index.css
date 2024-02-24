@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
 }
 
 @media print {
@@ -16,6 +17,13 @@ body {
   .excluir {
     display: none !important;
   }
+}
+
+#titulo{
+  background-color: cornflowerblue;
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 /* Css dos inputs  */

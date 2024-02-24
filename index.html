@@ -12,7 +12,10 @@
 </head>
 
 <body>
-  <h1>Dados pessoais</h1>
+  <div id="titulo">
+    <h1>Dados pessoais</h1>
+  </div>
+
   <form action="">
     <div class="frmContent">
       <input id="nome" type="text" placeholder="Nome" required>
@@ -27,21 +30,21 @@
   <hr>
   <div>
     <table class="content-table">
-    <thead>
-      <tr>
-        <th class="cabecalho" scope="col">Nome</th>
-        <th class="cabecalho" scope="col">Função</th>
-        <th class="cabecalho" scope="col">Idade</th>
-        <th class="cabecalho" scope="col">Empresa</th>
-        <th class="cabecalho editar" scope="col">Ação</th>
-      </tr>
-    </thead>
-    <tbody id="listaPessoas">
+      <thead>
+        <tr>
+          <th class="cabecalho" scope="col">Nome</th>
+          <th class="cabecalho" scope="col">Função</th>
+          <th class="cabecalho" scope="col">Idade</th>
+          <th class="cabecalho" scope="col">Empresa</th>
+          <th class="cabecalho editar" scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody id="listaPessoas">
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
   </div>
-  
+
 
 
   <button class="btn-print" onclick="print()">Imprimir</button>

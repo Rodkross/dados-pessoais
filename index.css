@@ -1,49 +1,98 @@
-:root{
-  font-family: "Ubuntu", sans-serif;
-
+:root {
+  font-family: 'Ubuntu', sans-serif;
 }
 
-body{
+body {
   background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media print{
+@media print {
   input,
-  button{
+  button {
     display: none !important;
   }
 }
 
-.frmContent{
+/* Css dos inputs  */
+.frmContent {
   display: flex;
   flex-direction: column;
-  gap: .5em;
-
+  gap: 0.5em;
 }
 
-input{
+input {
   width: 15em;
   cursor: pointer;
 }
 
-input::after{
-  content: "";
+input::after {
+  content: '';
   display: block;
   clear: both;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
+.btn-input {
+  margin-top: 1em;
+  width: 8em;
+  padding: 0.5em 0;
+  transition-duration: 1s;
+  background-color: cornflowerblue;
+  color: #fff;
+}
 
+.btn-input:hover {
+  background-color: #efefef;
+  color: #000000;
+}
 
-td,th{
+table {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* Css da tabela */
+td,
+th {
   padding: 0 1em;
+}
+
+.cabecalho {
+  background-color: cornflowerblue;
+}
+
+.linha-par {
+  background-color: #f2f2f2;
+}
+.linha-impar {
+  background-color: bisque;
+}
+
+.btn-editar, .btn-remover{
+  border: none;
+  transition-duration: 1s;
+  border-radius: .4em;
+  color: #fff;
   
 }
 
-.cabecalho{
-  background-color: cornflowerblue ;
+.btn-editar {
+  background-color: green;
+  
 }
 
+.btn-remover {
+  background-color: red;
+}
+
+.btn-editar:hover, .btn-remover:hover{
+  background-color: #efefef;
+  color: #000000;
+  
+}

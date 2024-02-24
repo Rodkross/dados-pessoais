@@ -46,7 +46,10 @@ function exibirPessoas() {
   // Percorra a array de pessoas e adicione cada pessoa como uma nova linha na tabela
   pessoas.forEach((pessoa, index) => {
     const linha = tabela.insertRow();
-    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td><td><button onclick="editar(${index})">Editar</button></td>`;
+    linha.innerHTML = `<td>${pessoa.nome}</td><td>${pessoa.funcao}</td><td>${pessoa.idade}</td><td>${pessoa.empresa}</td><td><button class="btn-editar" onclick="editar(${index})">+</button></td><td><button class="btn-remover" onclick="remover(${index})">-</button></td>`;
+
+    //um ternario para colocar classe em cada linha de nome par ou impar
+    linha.className = index % 2 === 0 ? 'linha-par' : 'linha-impar';
   });
 }
 
@@ -65,10 +68,10 @@ function limparCampos() {
 // função pra editar os dados de uma pessoa
 function editar(index) {
   const pessoa = pessoas[index];
-  const novoNome = prompt("Novo nome:", pessoa.nome);
-  const novaFuncao = prompt("Nova função:", pessoa.funcao);
-  const novaIdade = prompt("Nova idade:", pessoa.idade);
-  const novaEmpresa = prompt("Nova empresa:", pessoa.empresa);
+  const novoNome = prompt('Novo nome:', pessoa.nome);
+  const novaFuncao = prompt('Nova função:', pessoa.funcao);
+  const novaIdade = prompt('Nova idade:', pessoa.idade);
+  const novaEmpresa = prompt('Nova empresa:', pessoa.empresa);
 
   // Atualiza os dados da pessoa
   pessoa.nome = novoNome || pessoa.nome;
@@ -80,3 +83,9 @@ function editar(index) {
   salvarNoLocalStorage(); // Para salvar as pessoas atualizadas no localStorage
 }
 
+// funcao pra excluir dados
+function remover(index) {
+  pessoas.splice(index, 1); // Remove o item do array pelo índice
+  exibirPessoas();
+  salvarNoLocalStorage();
+}

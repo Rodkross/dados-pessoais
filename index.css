@@ -11,7 +11,7 @@ body {
 
 @media print {
   input,
-  button {
+  button, .editar, .excluir {
     display: none !important;
   }
 }
@@ -74,25 +74,24 @@ th {
   background-color: bisque;
 }
 
-.btn-editar, .btn-remover{
+.btn-editar,
+.btn-remover {
   border: none;
   transition-duration: 1s;
-  border-radius: .4em;
+  border-radius: 0.4em;
   color: #fff;
-  
 }
 
 .btn-editar {
   background-color: green;
-  
 }
 
 .btn-remover {
   background-color: red;
 }
 
-.btn-editar:hover, .btn-remover:hover{
+.btn-editar:hover,
+.btn-remover:hover {
   background-color: #efefef;
   color: #000000;
-  
 }
